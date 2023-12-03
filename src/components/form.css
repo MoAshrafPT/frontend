@@ -10,5 +10,13 @@
     color: gold !important;
 }
 .general-appearance{
+    height: 120vh;
     background-color: #93e4c1;
+}
+.float-text{
+    font-size: large;
+    border-radius: 20px;
+    background-color: white;
+    margin: 30px;
+    padding: 30px;
 }

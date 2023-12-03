@@ -15,10 +15,10 @@ export default function Navbar()
         <div className="collapse navbar-collapse" id="navbarsExample07">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">Home</a>
+              <Link to='/home' className="nav-link">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">About Us</a>
+              <Link to ='/about' className="nav-link">About Us</Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Cars</a>
