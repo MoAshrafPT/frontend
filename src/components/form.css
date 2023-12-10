@@ -56,6 +56,10 @@ margin-right: 10px;
     outline: none;
     border:2px solid rgba(131, 119, 119, 0.452);
 }
+.error-msg{
+    color: red;
+    display: block;
+}
 .spacebetween{
     display: flex;
     justify-content: space-between;
