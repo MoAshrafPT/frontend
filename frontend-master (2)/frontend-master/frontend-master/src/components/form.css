@@ -1,0 +1,220 @@
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
+.formscreen{
+   animation: fadeIn 1s;
+}
+.btn-highlight:hover{
+    color: rgb(0, 0, 0) !important;
+    background-color: aliceblue !important;
+}
+.btn-default:hover{
+    color: white !important;
+    background-color: rgb(0, 92, 46) !important
+
+}
+
+
+.btn-default{
+    margin-bottom: 10px;
+
+}
+body{
+    background-image: url("../images/car1.jpg");
+    background-repeat: no-repeat;
+    background-size:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    
+}
+
+.big-box1
+{
+
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    width:600px;
+    border-radius: 20px;
+    background-color: rgba(28, 29, 29, 0.5);
+    color: rgba(255, 255, 255, 0.993);
+}
+
+  
+.big-box2
+{
+
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    width:600px;
+    border-radius: 20px;
+    background-color: rgba(28, 29, 29, 0.5);
+    color: rgba(255, 255, 255, 0.993);
+}
+
+.mb-3 label{
+margin-left:10px ;
+margin-right: 10px;
+}
+
+ input{
+    width: 350px;
+    border-radius: 20px;
+    height:40px;
+    color:aliceblue;
+    background: transparent;
+    outline: none;
+    border:2px solid rgba(131, 119, 119, 0.452);
+}
+@media screen and (max-width: 480px) {
+   
+    .big-box1{
+        margin-top: 10px;
+        position: relative;
+        width:150px;
+        border-radius:10px ;
+        font-size: 12px;
+    }
+    /* .big-box2{
+        margin-top: 10px;
+        position: relative;
+        width:150px;
+        border-radius:10px ;
+        font-size: 12px;
+    } */
+    input{
+        width: 150px;
+        border-radius: 10px;
+        height:20px;
+    }
+   
+    label{
+        font-size: 12px;
+    }
+    img{
+        width: 10px;
+    }
+}
+@media screen and (max-width: 987px)
+{
+    .big-box2{
+        margin-top: 20px;
+        position: relative;
+        width:300px;
+        border-radius:10px ;
+        font-size: 13px;
+    }
+    input{
+        width:280px;
+        border-radius: 10px;
+        height:20px;
+    }
+    img{
+        width: 12px;
+    }
+} 
+@media screen and (max-width: 718px)
+{
+    .big-box2{
+        margin-top: 10px;
+        position: relative;
+        width:200px;
+        border-radius:10px ;
+        font-size: 13px;
+    }
+    input{
+        width:150px;
+        border-radius: 10px;
+        height:20px;
+    }
+    img{
+        width: 12px;
+    }
+} 
+@media screen and (max-width: 700px) {
+   
+    .big-box1{
+        margin-top: 10px;
+        position: relative;
+        width:300px;
+        border-radius:10px ;
+        font-size: 13px;
+    }
+    .big-box2{
+        margin-top: 10px;
+        position: relative;
+        width:200px;
+        border-radius:10px ;
+        font-size: 13px;
+    }
+    input{
+        width:200px;
+        border-radius: 10px;
+        height:20px;
+    }
+   
+    label{
+        font-size: 13px;
+    }
+    img{
+        width: 12px;
+    }
+}
+@media screen and (max-width: 407px) {
+   
+    .big-box1{
+        margin-top: 5px;
+        position: relative;
+        width:150px;
+        border-radius:10px ;
+        font-size: 9px;
+    }
+    .big-box2{
+        margin-top: 5px;
+        position: relative;
+        width:150px;
+        border-radius:10px ;
+        font-size: 9px;
+    }
+    input{
+        width: 100px;
+        border-radius: 10px;
+        height:20px;
+    }
+ 
+   
+    label{
+        font-size: 9px;
+    }
+    img{
+        width: 9px;
+    }
+}
+
+/* .float-text{
+    font-size: large;
+    border-radius: 20px;
+    background-color: white;
+    margin: 30px;
+    padding: 30px;
+} */
+.spacebetween{
+    display: flex;
+    justify-content: space-between;
+}
+/* .float-text{
+    font-size: large;
+    border-radius: 20px;
+    background-color: white;
+    margin: 30px;
+    padding: 30px;
+} */
