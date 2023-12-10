@@ -6,6 +6,7 @@ export default function About()
 {
     return(
         <div className="general-appearance">
+          
             <Navbar/>
             <div className="float-text">
             <h2>Who are we?</h2>
@@ -19,6 +20,8 @@ export default function About()
             <h2>Where we compete</h2>
             <p>Suspendisse potenti. Fusce eu augue varius, tempor eros non, aliquet nulla. Fusce congue aliquam finibus. Etiam facilisis consequat commodo. Maecenas mollis et libero eu tincidunt. Integer convallis elementum lorem, vitae tincidunt orci mollis at. Duis risus odio, facilisis nec imperdiet vitae, interdum mattis urna. Morbi vulputate elit non tellus sodales pharetra. Curabitur scelerisque in enim vitae aliquam. Proin a dolor ac est ornare ornare eu vel lacus. Morbi non lacus cursus, euismod tellus in, hendrerit lorem. Aliquam ac orci ultricies, fermentum leo eget, elementum tellus. Duis tincidunt enim turpis, id mollis leo ornare in. Pellentesque rutrum at mauris nec malesuada. Nulla interdum dolor purus. Ut nunc urna, mollis id velit sed, interdum semper tellus.</p>
             </div>
+          
+           
         </div>
     )
 }
