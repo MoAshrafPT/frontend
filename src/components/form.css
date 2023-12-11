@@ -151,3 +151,14 @@ margin-right: 10px;
     border: #fff, solid;
     border-radius: 25px;
   }
+  
+  th:hover{
+    color: gold;
+  }
+  table{
+    border: 1px solid;
+    border-color: #333;
+    border-radius: 25px;
+    width: 100%;
+  }
+  
