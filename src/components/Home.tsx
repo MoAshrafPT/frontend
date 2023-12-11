@@ -1,12 +1,11 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import Navbar from "./Navbar";
-import Carousel from 'react-bootstrap/Carousel';
+import {Link} from "react-router-dom";
+import Toolbar from "./Toolbar";
 
 function Home()
 {  return(
-    <div  >
-        <Navbar/>
+    <div className="general-appearance">
+        <Toolbar/>
     </div>
     )
 }

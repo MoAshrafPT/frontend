@@ -1,13 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import Navbar from "./Navbar";
+import Toolbar from "./Toolbar";
 
 export default function About()
 {
     return(
         <div className="general-appearance">
           
-            <Navbar/>
+            <Toolbar/>
             <div className="float-text">
             <h2>Who are we?</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non sem eu massa accumsan tempus nec sed arcu. Aenean sed elementum nisl, sed ornare felis. Nullam gravida, odio eu pharetra luctus, dui ante venenatis massa, vitae finibus magna nibh sed urna. Aliquam at felis vitae metus maximus facilisis. Cras molestie augue at enim bibendum fermentum. Vestibulum pulvinar gravida felis quis egestas. Curabitur dolor felis, pulvinar id congue nec, tincidunt vel massa. Sed tempus felis justo, ac aliquet tortor tincidunt in.</p>

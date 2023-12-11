@@ -31,6 +31,7 @@ function Login()
 
 
     return(
+        <div className="formContainer">
         <div className = "big-box">
            <form action="" className="form1" onSubmit={handleSubmit(submitData)}>
            <div className="mb-3">
@@ -54,7 +55,8 @@ function Login()
            <p>Don't you have an account? </p>
            <Link to="/signup" className="btn btn-default border w-100 bg-light text-decoration-none">Sign Up</Link>
        </form>
-       </div>           
+       </div>    
+       </div>       
     ) 
 }
 

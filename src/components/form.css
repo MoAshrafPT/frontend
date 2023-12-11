@@ -17,17 +17,20 @@
 .btn-default{
     margin-bottom: 10px;
 }
-body{
-    background-image: url("../images/car1.jpg");
-    background-repeat: no-repeat;
-    background-size:100% ;
+.formContainer{
+    
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    
-    
+    flex-direction: column;   
 }
+body{
+    background-image: url("../images/car1.jpg");
+    background-repeat: no-repeat;
+    background-size:200% ;
+}
+
 .big-box
 {
     margin-top: 120px;
@@ -64,10 +67,87 @@ margin-right: 10px;
     display: flex;
     justify-content: space-between;
 }
-/* .float-text{
-    font-size: large;
-    border-radius: 20px;
-    background-color: white;
-    margin: 30px;
-    padding: 30px;
-} */
+.carousel-img{
+    
+    height: 70px;;
+}
+.general-appearance{
+    width: 100%;
+}
+.nav-body{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  .nav-links{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  .nav-links li{
+    list-style: none;
+    margin: 0 12px;
+  }
+  .nav-links li a{
+    position: relative;
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 6px 0;
+    text-decoration: none;
+  }
+  .nav-links li a:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #34efdf;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+  }
+  .nav-links li a:hover:before{
+    width: 100%;
+  }
+  .nav-links li.center a:before{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav-links li.upward a:before{
+    width: 100%;
+    bottom: -5px;
+    opacity: 0;
+  }
+  .nav-links li.upward a:hover:before{
+    bottom: 0px;
+    opacity: 1;
+  }
+  .nav-links li.forward a:before{
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+  }
+  .nav-links li.forward a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .login-btn{
+    border-color: aquamarine;
+    border-radius: 25px;
+  }
+  .slider-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider-style{
+    border: #fff, solid;
+    border-radius: 25px;
+  }

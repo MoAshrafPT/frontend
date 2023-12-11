@@ -37,6 +37,7 @@ function Signup()
     }
 
     return(
+        <div className="formContainer">
         <div className = "big-box" >
             <form action="" onSubmit={handleSubmit(submitData)}>
                 <div className="mb-3">
@@ -91,6 +92,7 @@ function Signup()
                 <p>Already have an account?</p>
                 <Link to='/login'  className="btn btn-default border w-100 bg-light text-decoration-none">Log in</Link>
             </form>
+        </div>
         </div>
     );
 }
