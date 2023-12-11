@@ -12,7 +12,7 @@ type memberData ={
 
 }
 
-export default function Members()
+export default function Members(props: {state:string})
 {
     const [data,setData] = useState<memberData[]>([]);
 
@@ -26,7 +26,7 @@ export default function Members()
 
     return(
         <div>
-           <Toolbar/>
+           <Toolbar state={props.state} />
            <div style={{display: "flex", justifyContent: "center", height:"50vh", alignItems:"center", overflow:"auto"}}>
            <div  style={{padding: "30px", backgroundColor:'white', width:"550px", borderRadius:'25px', display:"flex", justifyContent:"center"}}>
            <table>

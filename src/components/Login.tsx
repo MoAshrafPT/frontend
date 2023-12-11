@@ -3,25 +3,23 @@ import { useEffect, useState } from "react";
 import "./form.css";
 import email from "../images/email.png";
 import pass from "../images/password.png";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import { ZodType, z } from "zod";
-//import {FormData} from "./types"
+import axios from "axios";
+import {useNavigate} from "react-router-dom"; // Import useHistory
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Nav } from "react-bootstrap";
 
 function Login() {
   //Not sure of this but will leave this for now
   const [isLoggedIn, setLoginStatus] = useState<boolean>(false);
 
-  useEffect(() => {
-    fetch("http://localhost:8081/login")
-      .then((res) => res.json())
-      .then((isLoggedIn) => setLoginStatus(isLoggedIn))
-      .catch((err) => console.log(err));
-  }, []);
+ 
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   type FormData = {
     email: string;
@@ -39,6 +37,11 @@ function Login() {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
   const submitData = (data: FormData) => {
     console.log("Data:", data);
+    axios.post('http://localhost:8081/login', {email: data.email, password:data.password})
+    .then(res => setLoginStatus(true))
+    .catch(err => console.log("Error"));
+    
+   
   };
 
   useEffect(() => {
@@ -46,6 +49,13 @@ function Login() {
     console.log(username);
     
   });
+
+  useEffect(()=>{
+    if(isLoggedIn)
+ {
+     navigate('/home');
+ }  
+ })
 
   return (
     <div className="formContainer">
@@ -101,6 +111,7 @@ function Login() {
         </form>
       </div>
     </div>
+
   );
 }
 

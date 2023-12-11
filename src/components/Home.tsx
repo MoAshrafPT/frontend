@@ -2,10 +2,10 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Toolbar from "./Toolbar";
 
-function Home()
+function Home(props: {state: string})
 {  return(
     <div className="general-appearance">
-        <Toolbar/>
+        <Toolbar state="guest"/>
     </div>
     )
 }

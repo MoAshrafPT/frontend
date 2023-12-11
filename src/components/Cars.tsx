@@ -4,11 +4,11 @@ import Toolbar from "./Toolbar";
 import Slider from "./Slider";
 
 
-export default function Cars()
+export default function Cars(props: {state: string})
 {
     return (
     <div className="general-appearance">
-        <Toolbar/>
+        <Toolbar state = {props.state}/>
         <Slider/>
         
     </div>
