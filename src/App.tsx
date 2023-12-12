@@ -7,22 +7,27 @@ import About from './components/About';
 import Cars from './components/Cars';
 import Members from './components/Members';
 import { BrowserRouter, Routes , Route, Navigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext, UserContextProvider } from './context/UserContext';
 
 
+//TODO: make login data synced to entire app
 
 function App() {
   return (
+    <UserContextProvider>
     <BrowserRouter>
       <Routes>
          <Route path='/' element={<Login/>}></Route>
          <Route path='/signup' element={<Signup/>}></Route>
          <Route path='/login' element={<Login/>}></Route>
-         <Route path='/home' element={<Home state='guest'/>}></Route>
+         <Route path='/home' element={<Home />}></Route>
          <Route path='/about' element={<About state='guest'/>}></Route>
          <Route path='/cars' element={<Cars state='Username'/>}></Route>
          <Route path='/members' element={<Members state='guest'/>}></Route>
       </Routes>
     </BrowserRouter>
+    </UserContextProvider>
   );
 }
 

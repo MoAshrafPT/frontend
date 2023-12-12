@@ -26,7 +26,7 @@ export default function Members(props: {state:string})
 
     return(
         <div>
-           <Toolbar state={props.state} />
+           <Toolbar />
            <div style={{display: "flex", justifyContent: "center", height:"50vh", alignItems:"center", overflow:"auto"}}>
            <div  style={{padding: "30px", backgroundColor:'white', width:"550px", borderRadius:'25px', display:"flex", justifyContent:"center"}}>
            <table>

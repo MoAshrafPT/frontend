@@ -8,7 +8,7 @@ export default function Cars(props: {state: string})
 {
     return (
     <div className="general-appearance">
-        <Toolbar state = {props.state}/>
+        <Toolbar />
         <Slider/>
         
     </div>

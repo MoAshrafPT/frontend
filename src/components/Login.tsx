@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "./form.css";
 import email from "../images/email.png";
 import pass from "../images/password.png";
@@ -10,16 +10,19 @@ import {useNavigate} from "react-router-dom"; // Import useHistory
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Nav } from "react-bootstrap";
+import { UserContext } from "../context/UserContext";
 
 function Login() {
-  //Not sure of this but will leave this for now
-  const [isLoggedIn, setLoginStatus] = useState<boolean>(false);
-
- 
-
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const userContext = useContext(UserContext);
   const navigate = useNavigate();
+
+  const [isLoggedIn, setLoginStatus] = useState<boolean>(false);
+  const [enteredWrongPassword, setPasswordCheck] = useState<boolean>(false)
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const [member,setMember]= useState<string>('');
+
 
   type FormData = {
     email: string;
@@ -35,25 +38,33 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
+  
   const submitData = (data: FormData) => {
     console.log("Data:", data);
     axios.post('http://localhost:8081/login', {email: data.email, password:data.password})
-    .then(res => setLoginStatus(true))
-    .catch(err => console.log("Error"));
-    
-   
+    .then((res) =>
+     {setLoginStatus(res.data.data)
+      
+      userContext.setUser({email:data.email,name:res.data.row})
+
+      if(!isLoggedIn)
+      {
+       
+        setPasswordCheck(true); //indicates user has entered password incorrectly
+      }
+    })
+    .catch(err => console.log(err));
   };
 
   useEffect(() => {
     console.log(password);
     console.log(username);
-    
   });
 
   useEffect(()=>{
     if(isLoggedIn)
  {
-     navigate('/home');
+    navigate('/home');
  }  
  })
 
@@ -92,6 +103,9 @@ function Login() {
               />
               {errors.password && (
                 <span className="error-msg">{errors.password.message}</span>
+              )}
+               {enteredWrongPassword && (
+                <span className="error-msg">password is incorrect</span>
               )}
             </div>
           </div>

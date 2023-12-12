@@ -1,25 +1,35 @@
 import { Link } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
+import { useContext } from "react";
 
 
 
-function Toolbar(props: {state:string}) {
-  const state = props.state;
 
+function Toolbar() {
+ const userContext = useContext(UserContext);
+ 
+ 
   return (
 
     <div className="nav-body">
        <ul className="nav-links">
           <li><Link to="/home">Dashboard</Link></li>
+
+
+          {userContext.user && <li><Link to="/home">{userContext.user?.name}</Link></li>}
+
+
           <li className="center"><Link to ="/about" >About Us</Link></li>
           <li className="center"><Link to ="/cars" >Cars</Link></li>
           <li className="center"><Link to ="/members">Members</Link></li>
-          {state==='guest'? <li className="center"><Link to = "/login">Login</Link></li>
-           :<span style={{display:'flex'}}>
-             <li className="center"><Link to = "/profile">Username</Link></li>
-             <li className="center"><Link to = "/login">Log out</Link></li>
-            </span>}
+          {(userContext.user) ?<li className="center"><Link to = "/login" onClick={()=>{
+            userContext.setUser(null);
+          }}>Logout</Link></li>
+          : <li className="center"><Link to = "/login">Log in</Link></li>
+          }
+        
           
-  </ul>
+        </ul>
     </div>
   );
 }
