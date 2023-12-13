@@ -2,7 +2,9 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Toolbar from "./Toolbar";
 import { UserContextProvider } from "../context/UserContext";
-import { Card, Container, Row, Col } from 'react-bootstrap'
+import { Card, Container, Row, Col } from 'react-bootstrap';
+import Footer from "./Footer";
+
 
 
 const guestView = [
@@ -48,6 +50,13 @@ const guestView = [
         image: 'https://alltogether.swe.org/wp-content/uploads/2021/09/GettyImages-1223896865-2.jpg',
         link: '/awards' 
     },
+    {
+      id: 7,
+      title: 'Alumni',
+      description: 'Our honorable past members',
+      image: 'https://media.istockphoto.com/id/639698498/photo/graduation-college-school-degree-successful-concept.jpg?s=612x612&w=0&k=20&c=xTxCHBETVW5uX4HcZOhkgH4w_oNYnbSMfKe2jv-PNlU=',
+      link: '/alumni' 
+  },
     
   ];
 
@@ -115,7 +124,7 @@ function Home()
     </Container>
 
         
-        
+        <Footer/>
     </div>
     )
 }

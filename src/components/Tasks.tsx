@@ -5,6 +5,8 @@ import axios from "axios";
 import { log } from "console";
 import Toolbar from "./Toolbar";
 import { Table } from 'react-bootstrap';
+import Footer from "./Footer";
+import DropdownTeam from "./DropdownTeam";
 type taskData = {
     Task_Number: number,
     DescriptionT: string,
@@ -51,6 +53,7 @@ export default function Tasks(){
         {(tasks.length>0)?<h2>You have the following tasks</h2> : <h2>You have no tasks</h2>}
       </div>
       </div>
+      
       <div className="d-flex justify-content-center rounded">
       <Table striped='columns' bordered hover responsive className="w-100 rounded">
         <thead className="rounded">
@@ -81,6 +84,8 @@ export default function Tasks(){
       
       
     </div>
+    <Footer/>
         </div>
     )
 }
+

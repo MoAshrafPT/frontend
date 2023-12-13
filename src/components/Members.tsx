@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
 import Slider from "./Slider"
 import Toolbar from "./Toolbar"
-import { log } from "console"
+import { log, table } from "console"
+import Footer from "./Footer"
+import { DropdownMenu, Table } from 'react-bootstrap';
+import DropdownTeam from "./DropdownTeam"
 
 type memberData ={
     Mid: number,
@@ -26,32 +29,46 @@ export default function Members()
 
     return(
         <div>
-           <Toolbar />
-           <div style={{display: "flex", justifyContent: "center", height:"50vh", alignItems:"center", overflow:"auto"}}>
-           <div  style={{padding: "30px", backgroundColor:'white', width:"550px", borderRadius:'25px', display:"flex", justifyContent:"center"}}>
-           <table>
-            <thead style={{padding:"10px"}}>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Admin SSN</th>
-                <th>Position</th>
-                <th>Major</th>
-                </thead>
-                <tbody>
-                    {data.map((d,i)=>(
-                        <tr key={i}> 
-                        <td>{d.Mid}</td>
-                        <td>{d.nameM}</td>
-                        <td>{d.Admin_ssn}</td>
-                        <td>{d.Position}</td>
-                        <td>{d.Major}</td>
-                        </tr>
-                    ))}
-                </tbody>
-           
-           </table>
-           </div>
-           </div>
+            <Toolbar/>
+            <div>
+      <div className="d-flex justify-content-center">          
+        <div className="d-flex justify-content-center w-30 px-3 rounded mb-3" style={{backgroundColor:'white'}} >
+        <h2>-Team name- Team Members</h2>
+      </div>
+      <DropdownTeam/>
+      </div>
+      <div className="d-flex justify-content-center rounded">
+      <Table striped='columns' bordered hover responsive className="w-100 rounded">
+        <thead className="rounded">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Admin ID</th>
+            <th>Position</th>
+            <th>Team Name</th>
+            <th>Major</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* Use map function to iterate over the data array */}
+          {data.map((item) => (
+            <tr key={item.Mid}>
+              <td>{item.Mid}</td>  
+              <td>{item.nameM}</td>
+              <td>{item.Admin_ssn}</td>
+              <td>{item.Position}</td>
+              <td>Team name</td>
+              <td>{item.Major} </td>
+             
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+      </div>
+      
+      
+    </div>
+    <Footer/>
         </div>
     )
 }

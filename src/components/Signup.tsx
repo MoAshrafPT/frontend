@@ -11,6 +11,7 @@ import {FormData} from "./types"
 import { set, useForm } from "react-hook-form";
 import {zodResolver} from '@hookform/resolvers/zod'
 import axios from "axios";
+import Footer from "./Footer";
 
 
 function Signup()
@@ -150,6 +151,7 @@ function Signup()
                 <Link to='/login'  className="btn btn-default border w-100 bg-light text-decoration-none">Log in</Link>
             </form>
         </div>
+        
         </div>
     );
 }

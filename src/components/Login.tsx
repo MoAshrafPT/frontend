@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Nav } from "react-bootstrap";
 import { UserContext } from "../context/UserContext";
+import Footer from "./Footer";
 
 
 
@@ -125,6 +126,7 @@ function Login() {
           </Link>
         </form>
       </div>
+      
     </div>
 
   );
