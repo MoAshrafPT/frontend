@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom"
 import Toolbar from "./Toolbar";
 
-export default function About(props: {state:string})
+export default function About()
 {
     return(
         <div className="general-appearance">

@@ -4,7 +4,9 @@ import { useState } from "react";
 
 type AuthUser = {
     email:string,
-    name:string
+    name:string,
+    id:number,
+    isAuthenticated: boolean
 }
 
 export type UserContextType = {
@@ -19,6 +21,6 @@ type UserContextProviderType = {
 export const UserContext = createContext({} as UserContextType);
 
 export const UserContextProvider = ({children}: UserContextProviderType) =>{
-    const [user,setUser] = useState<AuthUser | null>(null);
+    const [user,setUser] = useState<AuthUser | null>({name:'',email:'',isAuthenticated:false,id:0});
     return <UserContext.Provider value={{user,setUser}}>{children}</UserContext.Provider>
 }

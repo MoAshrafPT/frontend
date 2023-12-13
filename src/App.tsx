@@ -9,6 +9,9 @@ import Members from './components/Members';
 import { BrowserRouter, Routes , Route, Navigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext, UserContextProvider } from './context/UserContext';
+import PrivateRoutes from './components/utils/PrivateRoute';
+import Tasks from './components/Tasks';
+
 
 
 //TODO: make login data synced to entire app
@@ -22,9 +25,11 @@ function App() {
          <Route path='/signup' element={<Signup/>}></Route>
          <Route path='/login' element={<Login/>}></Route>
          <Route path='/home' element={<Home />}></Route>
-         <Route path='/about' element={<About state='guest'/>}></Route>
-         <Route path='/cars' element={<Cars state='Username'/>}></Route>
-         <Route path='/members' element={<Members state='guest'/>}></Route>
+         <Route path='/about' element={<About />}></Route>
+         <Route path='/tasks' element={<Tasks/>}></Route>
+        
+         <Route path='/cars' element={<Cars />}></Route>
+         <Route path='/members' element={<Members/>}></Route>
       </Routes>
     </BrowserRouter>
     </UserContextProvider>

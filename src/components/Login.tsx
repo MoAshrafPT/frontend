@@ -12,6 +12,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Nav } from "react-bootstrap";
 import { UserContext } from "../context/UserContext";
 
+
+
 function Login() {
   const userContext = useContext(UserContext);
   const navigate = useNavigate();
@@ -40,13 +42,15 @@ function Login() {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
   
   const submitData = (data: FormData) => {
-    console.log("Data:", data);
+    
     axios.post('http://localhost:8081/login', {email: data.email, password:data.password})
     .then((res) =>
      {setLoginStatus(res.data.data)
+      console.log(res.data,data);
       
-      userContext.setUser({email:data.email,name:res.data.row})
-
+      userContext.setUser({email:data.email,name:res.data.row,id:res.data.id,isAuthenticated:true})
+      console.log(userContext.user);
+      
       if(!isLoggedIn)
       {
        
@@ -56,10 +60,7 @@ function Login() {
     .catch(err => console.log(err));
   };
 
-  useEffect(() => {
-    console.log(password);
-    console.log(username);
-  });
+ 
 
   useEffect(()=>{
     if(isLoggedIn)

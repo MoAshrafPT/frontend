@@ -12,7 +12,7 @@ type memberData ={
 
 }
 
-export default function Members(props: {state:string})
+export default function Members()
 {
     const [data,setData] = useState<memberData[]>([]);
 
