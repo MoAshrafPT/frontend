@@ -9,22 +9,26 @@ import DropdownTeam from "./DropdownTeam"
 type memberData ={
     Mid: number,
     nameM: string,
-    Admin_ssn: number,
+    Admin_Ssn: number,
     Position: string,
-    Major: string
+    Major: string,
+    Team_Name:string,
 
 }
 
 export default function Members()
 {
     const [data,setData] = useState<memberData[]>([]);
-
+    const [teamName,setTeamName] = useState<string>('All');
     useEffect(()=>{
-        fetch('http://localhost:8081/members')
+        fetch('http://localhost:8081/members/'+teamName+'')
         .then(res=> res.json())
-        .then(data=>setData(data))
+        .then(data=>{setData(data); console.log(data);
+        })
         .catch(err=>console.log(err));
-    },[]);
+    },[teamName]);
+
+    
 
 
     return(
@@ -33,9 +37,9 @@ export default function Members()
             <div>
       <div className="d-flex justify-content-center">          
         <div className="d-flex justify-content-center w-30 px-3 rounded mb-3" style={{backgroundColor:'white'}} >
-        <h2>-Team name- Team Members</h2>
+        <h2>{teamName} Members</h2>
       </div>
-      <DropdownTeam/>
+      <DropdownTeam path={teamName} setPath={setTeamName}/>
       </div>
       <div className="d-flex justify-content-center rounded">
       <Table striped='columns' bordered hover responsive className="w-100 rounded">
@@ -55,9 +59,9 @@ export default function Members()
             <tr key={item.Mid}>
               <td>{item.Mid}</td>  
               <td>{item.nameM}</td>
-              <td>{item.Admin_ssn}</td>
+              <td>{item.Admin_Ssn}</td>
               <td>{item.Position}</td>
-              <td>Team name</td>
+              <td>{item.Team_Name}</td>
               <td>{item.Major} </td>
              
             </tr>
