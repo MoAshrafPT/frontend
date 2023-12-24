@@ -3,7 +3,7 @@ const guestView = [
       id: 1,
       title: 'Sponsors',
       description: 'View our beloved sponsors',
-      image: 'https://media.istockphoto.com/id/881120664/photo/become-a-sponsor-written-on-business-card.jpg?s=612x612&w=0&k=20&c=2i55Tce2of6U37jJYrcb9t_3YHbzQux-q8zG-V2klt0=',
+      image: 'https://fit2stitch.com/assets/images/app_sponsor2.jpg',
       link: '/sponsors'  
     },
     {
