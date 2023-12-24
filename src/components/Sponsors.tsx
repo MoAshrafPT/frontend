@@ -9,8 +9,7 @@ const data = [
   {
     id: 1,
     title: "57357",
-    content:
-      "https://scontent.fcai19-5.fna.fbcdn.net/v/t1.18169-9/13620700_661949357289996_6301192236999873885_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=c2f564&_nc_ohc=R1Ju7t4YVcwAX8_URLF&_nc_ht=scontent.fcai19-5.fna&oh=00_AfCjjJ66H_BG4a_NI0c1Y5YMY3X7CWepl3zEz0yF079Pdw&oe=65A15DE5",
+    content: "https://cdn2.downdetector.com/static/uploads/logo/3_JNoDoWg.png",
   },
   {
     id: 2,
@@ -21,7 +20,7 @@ const data = [
     id: 3,
     title: "Shell",
     content:
-      "https://scontent.fcai19-5.fna.fbcdn.net/v/t1.18169-9/13620700_661949357289996_6301192236999873885_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=c2f564&_nc_ohc=R1Ju7t4YVcwAX8_URLF&_nc_ht=scontent.fcai19-5.fna&oh=00_AfCjjJ66H_BG4a_NI0c1Y5YMY3X7CWepl3zEz0yF079Pdw&oe=65A15DE5",
+      "https://cdn.icon-icons.com/icons2/2699/PNG/512/shell_logo_icon_169759.png",
   },
 ];
 
