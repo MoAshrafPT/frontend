@@ -103,7 +103,7 @@ export default function Tools(){
         </tbody>
       </Table>
 
-      
+      {(localStorage.getItem("role") === 'member') && 
       <div className="formContainer">
       <div className="big-box">
         <form action="" className="form1" onSubmit={handleSubmit(submitData)}>
@@ -165,8 +165,8 @@ export default function Tools(){
         </form>
       </div>
       
-    </div>
-    <Link to={clickPath}><button className="btn btn-secondary btn-highlight mt-4 w-100">View Your Requests</button></Link>
+    </div> }
+    <Link to={clickPath}><button className="btn btn-secondary btn-highlight mt-4 w-100">View Incoming Requests</button></Link>
       </div></div> 
             <Footer/>
         </div>

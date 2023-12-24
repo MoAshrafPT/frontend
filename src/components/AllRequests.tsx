@@ -12,6 +12,7 @@ import axios from "axios";
 
 export default function AllRequests(){
  const navigate = useNavigate();
+
     if(localStorage.getItem('isAuthenticated') !=='true')
         navigate('/login');
    
@@ -21,6 +22,7 @@ export default function AllRequests(){
         quantity: number,
         deadline: string
     }
+    const [selected,deleteSelected] = useState<requestData | null>(null)
 
     const [requests,setRequests] = useState<requestData[]>([]);
 
@@ -32,7 +34,9 @@ export default function AllRequests(){
         .catch(err=>console.log(err));
     },[])
 
-    
+    const handleDelete =  (item: requestData)=>{
+        axios.delete("http://localhost:8081/deleterequest")
+    }
 
 
 
@@ -63,7 +67,7 @@ export default function AllRequests(){
               <td>{item.toolname}</td>
               <td>{item.quantity}</td>
               <td>{item.deadline.slice(0,-14)}</td>
-              <td ><form action="" method="POST"><input style={{height: "20px", margin: "0px", padding:"0px"}} type="checkbox" /></form></td>
+              <td ><input style={{height: "20px", margin: "0px", padding:"0px"}} type="checkbox" /></td>
             </tr>
           ))}
         </tbody>
