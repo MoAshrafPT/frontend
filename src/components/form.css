@@ -28,7 +28,8 @@
 body{
     background-image: url("../images/car1.jpg");
     background-repeat: no-repeat;
-    background-size:200% ;
+    background-size:150% ;
+    background-attachment: fixed;
 }
 
 .big-box

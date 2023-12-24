@@ -49,8 +49,14 @@ function Login() {
      {setLoginStatus(res.data.data)
       console.log(res.data,data);
       
-      userContext.setUser({email:data.email,name:res.data.row,id:res.data.id,isAuthenticated:true})
-      console.log(userContext.user);
+      userContext.setUser({email:data.email,name:res.data.row,id:res.data.id,isAuthenticated:true});
+      localStorage.setItem("userId", res.data.id);
+      localStorage.setItem("username",res.data.row);
+      localStorage.setItem("email",data.email);
+      localStorage.setItem("role",res.data.role);
+      localStorage.setItem("isAuthenticated",'false');
+      console.log(localStorage.getItem('role'),'getting role');
+      
       
       if(!isLoggedIn)
       {
@@ -66,6 +72,7 @@ function Login() {
   useEffect(()=>{
     if(isLoggedIn)
  {
+    localStorage.setItem("AuthToken",'AUTH123')
     navigate('/home');
  }  
  })
@@ -123,6 +130,13 @@ function Login() {
             className="btn btn-default border w-100 bg-light text-decoration-none"
           >
             Sign Up
+          </Link>
+
+          <Link
+            to="/home"
+            className="btn btn-default border w-100 bg-secondary text-decoration-none"
+          >
+            Continue as guest
           </Link>
         </form>
       </div>

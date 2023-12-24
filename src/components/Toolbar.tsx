@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import settings from "../images/settings.gif";
 
 
@@ -8,6 +8,21 @@ import settings from "../images/settings.gif";
 
 function Toolbar() {
  const userContext = useContext(UserContext);
+ const [id,setID] = useState<any>(null)
+ const [name,setName] = useState<any>(null)
+ const [email,setEmail] = useState<any>(null)
+
+ useEffect(()=>{
+ setID(Number(localStorage.getItem('userId')));
+ setName(localStorage.getItem('username'));
+ setEmail(localStorage.getItem('email'));
+ },[localStorage.getItem('userId')])
+
+
+
+//  const id = localStorage.getItem("userId");
+//  const name =localStorage.getItem("username");
+//  const email = localStorage.getItem("email");
 
  
  
@@ -27,6 +42,16 @@ function Toolbar() {
           {(userContext.user.id !== 0) ?
           <li className="center"><Link to = "/login" onClick={()=>{
             userContext.setUser({name:'',email:'',isAuthenticated:false,id:0});
+            
+            localStorage.removeItem("AuthToken");
+            localStorage.setItem("isAuthenticated",'false');
+            localStorage.removeItem("userId");
+            localStorage.removeItem("username");
+            localStorage.removeItem("email");
+            localStorage.removeItem("role");
+
+            console.log(localStorage.getItem('role'));
+            
           }}><img src=""></img> Log out</Link></li>
           : <li className="center"><Link to = "/login">Log in</Link></li>
           }
