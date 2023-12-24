@@ -49,7 +49,7 @@ function Signup()
         major:z.string().min(2).max(10),
         password: z.string().min(8).max(20),
         confirmPassword: z.string().min(8).max(20),
-        gradYear: z.number().min(currentYear).max(currentYear+5)
+        gradYear: z.number().gte(currentYear).lte(currentYear+5)
     }).refine((data)=> data.password === data.confirmPassword, {
         message: "Passwords do not match",
         path: ["confirmPassword"],

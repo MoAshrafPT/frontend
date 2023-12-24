@@ -14,10 +14,12 @@ import Tasks from './components/Tasks';
 import Tools from './components/Tools';
 import Requests from './components/Requests';
 import AllRequests from './components/AllRequests';
+import Sponsors from './components/Sponsors';
+import Races from './components/Races';
 
 
 
-//TODO: make login data synced to entire app
+
 
 function App() {
   return (
@@ -32,7 +34,9 @@ function App() {
          <Route path='/tasks' element={<Tasks/>}></Route>
          <Route path='/tools' element={<Tools/>}></Route>
          <Route path='/cars' element={<Cars />}></Route>
+         <Route path='/sponsors' element={<Sponsors />}></Route>
          <Route path='/myrequests' element={<Requests />}></Route>
+         <Route path='/races' element={<Races />}></Route>
          <Route path='/allrequests' element={<AllRequests />}></Route>
          <Route path='/members' element={<Members/>}></Route>
       </Routes>
