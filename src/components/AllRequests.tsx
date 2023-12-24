@@ -35,7 +35,14 @@ export default function AllRequests(){
     },[])
 
     const handleDelete =  (item: requestData)=>{
-        axios.delete("http://localhost:8081/deleterequest")
+        axios.delete(`http://localhost:8081/deleterequest/?id=${item.memberID}&name=${item.toolname}`)
+        .then((res) => {
+            console.log(res)
+            setRequests((prevRequests) => prevRequests.filter(request => request.toolname!==item.toolname));
+        }
+        )
+        .catch(err => console.log(err)
+        )
     }
 
 
@@ -67,7 +74,9 @@ export default function AllRequests(){
               <td>{item.toolname}</td>
               <td>{item.quantity}</td>
               <td>{item.deadline.slice(0,-14)}</td>
-              <td ><input style={{height: "20px", margin: "0px", padding:"0px"}} type="checkbox" /></td>
+              <td ><input onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{
+                handleDelete(item);
+              }} style={{height: "20px", margin: "0px", padding:"0px"}} type="checkbox" /></td>
             </tr>
           ))}
         </tbody>
