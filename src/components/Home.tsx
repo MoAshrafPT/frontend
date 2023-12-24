@@ -25,13 +25,13 @@ function Home()
   if(localStorage.getItem("username")){
     if(localStorage.getItem('role')==='member'){
       chosenView = memberView;
-    }else if(localStorage.getItem('role')==='Admin')
+    }else if(localStorage.getItem('role')==='admin')
     {
       chosenView =adminView;
-    }else if(localStorage.getItem('role')==='Manager')
+    }else if(localStorage.getItem('role')==='manager')
     {
       chosenView =managerView;
-    }else if(localStorage.getItem('role')==='Sponsor')
+    }else if(localStorage.getItem('role')==='sponsor')
     {
       chosenView =sponsorView;
     }

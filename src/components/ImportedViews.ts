@@ -52,29 +52,33 @@ const guestView = [
   ];
 
   const memberView =[
-    {
+      {
         id: 1,
         title: 'Sponsors',
         description: 'View our beloved sponsors',
-        image: 'https://media.istockphoto.com/id/881120664/photo/become-a-sponsor-written-on-business-card.jpg?s=612x612&w=0&k=20&c=2i55Tce2of6U37jJYrcb9t_3YHbzQux-q8zG-V2klt0=', // Replace with your actual image URL
+        image: 'https://media.istockphoto.com/id/881120664/photo/become-a-sponsor-written-on-business-card.jpg?s=612x612&w=0&k=20&c=2i55Tce2of6U37jJYrcb9t_3YHbzQux-q8zG-V2klt0=',
+        link: '/sponsors' 
       },
       {
         id: 2,
         title: 'Projects',
         description: 'See ongoing projects you are involved in',
         image: 'https://images.inc.com/uploaded_files/image/1920x1080/getty_488892667_9707249704500122_95943.jpg',
+        link: '/projects' 
       },
       {
         id: 3,
         title: 'Races',
         description: 'Get ready for our next adventure',
         image: 'https://images.pexels.com/photos/12801/pexels-photo-12801.jpeg?auto=compress&cs=tinysrgb&w=600',
+        link: '/races' 
       },
       {
           id: 4,
           title: 'tools',
           description: 'Check out our inventory and see available tools',
           image: 'https://aschilo.com/wp-content/uploads/tool-equip.jpg',
+          link: '/tools' 
       },
       {
           id: 5,
@@ -84,8 +88,81 @@ const guestView = [
       },
 
   ];
-  const adminView = [''];
+  const adminView = [
+    {
+      id: 1,
+      title: 'Disciplinary Action',
+      description: 'Take corrective action against a member',
+      image: 'https://www.shiftbase.com/hs-fs/hubfs/manager-fires-the-bad-employee-2022-09-15-02-26-50-utc_50.jpg?width=725&name=manager-fires-the-bad-employee-2022-09-15-02-26-50-utc_50.jpg',
+      link: '/discipline' 
+    },
+    {
+      id: 2,
+      title: 'Races',
+      description: 'Get ready for our next adventure',
+      image: 'https://images.pexels.com/photos/12801/pexels-photo-12801.jpeg?auto=compress&cs=tinysrgb&w=600',
+      link: '/races' 
+    },
+    {
+      id: 3,
+      title: 'tools',
+      description: 'Check out our inventory and see available tools',
+      image: 'https://aschilo.com/wp-content/uploads/tool-equip.jpg',
+      link: '/tools' 
+    },
+    {
+      id: 4,
+      title: 'Sponsors',
+      description: 'View our beloved sponsors',
+      image: 'https://media.istockphoto.com/id/881120664/photo/become-a-sponsor-written-on-business-card.jpg?s=612x612&w=0&k=20&c=2i55Tce2of6U37jJYrcb9t_3YHbzQux-q8zG-V2klt0=',
+      link: '/sponsors' 
+    },
+    {
+      id: 5,
+      title: 'Update member position',
+      description: 'Promote or demote a member',
+      image: 'https://www.aihr.com/wp-content/uploads/promotion-rate-cover.png',
+      link: '/changeposition' 
+    },
+
+  ];
   const sponsorView = [''];
-  const managerView = [''];
+  const managerView = [
+    {
+      id: 1,
+      title: 'Disciplinary Action',
+      description: 'Take corrective action against a member',
+      image: 'https://www.shiftbase.com/hs-fs/hubfs/manager-fires-the-bad-employee-2022-09-15-02-26-50-utc_50.jpg?width=725&name=manager-fires-the-bad-employee-2022-09-15-02-26-50-utc_50.jpg',
+      link: '/discipline' 
+    },
+    {
+      id: 2,
+      title: 'Races',
+      description: 'Get ready for our next adventure',
+      image: 'https://images.pexels.com/photos/12801/pexels-photo-12801.jpeg?auto=compress&cs=tinysrgb&w=600',
+      link: '/races' 
+    },
+    {
+      id: 3,
+      title: 'tools',
+      description: 'Check out our inventory and see available tools',
+      image: 'https://aschilo.com/wp-content/uploads/tool-equip.jpg',
+      link: '/tools' 
+    },
+    {
+      id: 4,
+      title: 'Sponsors',
+      description: 'View our beloved sponsors',
+      image: 'https://media.istockphoto.com/id/881120664/photo/become-a-sponsor-written-on-business-card.jpg?s=612x612&w=0&k=20&c=2i55Tce2of6U37jJYrcb9t_3YHbzQux-q8zG-V2klt0=',
+      link: '/sponsors' 
+    },
+    {
+      id: 5,
+      title: 'Update member position',
+      description: 'Promote or demote a member',
+      image: 'https://www.aihr.com/wp-content/uploads/promotion-rate-cover.png',
+      link: '/changeposition' 
+    },
+  ];
 
   export {adminView,sponsorView,guestView,memberView,managerView}

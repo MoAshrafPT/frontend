@@ -11,6 +11,9 @@ import { useContext } from 'react';
 import { UserContext, UserContextProvider } from './context/UserContext';
 import PrivateRoutes from './components/utils/PrivateRoute';
 import Tasks from './components/Tasks';
+import Tools from './components/Tools';
+import Requests from './components/Requests';
+import AllRequests from './components/AllRequests';
 
 
 
@@ -27,8 +30,10 @@ function App() {
          <Route path='/home' element={<Home />}></Route>
          <Route path='/about' element={<About />}></Route>
          <Route path='/tasks' element={<Tasks/>}></Route>
-        
+         <Route path='/tools' element={<Tools/>}></Route>
          <Route path='/cars' element={<Cars />}></Route>
+         <Route path='/myrequests' element={<Requests />}></Route>
+         <Route path='/allrequests' element={<AllRequests />}></Route>
          <Route path='/members' element={<Members/>}></Route>
       </Routes>
     </BrowserRouter>

@@ -24,7 +24,7 @@ export default function Tasks(){
 
 
         
-     if(localStorage.getItem('isAuthenticated') ==='true'){
+     if(localStorage.getItem('isAuthenticated') !=='true'){
             navigate('/login');
         }
 

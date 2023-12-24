@@ -54,7 +54,7 @@ function Login() {
       localStorage.setItem("username",res.data.row);
       localStorage.setItem("email",data.email);
       localStorage.setItem("role",res.data.role);
-      localStorage.setItem("isAuthenticated",'false');
+      localStorage.setItem("isAuthenticated",'true');
       console.log(localStorage.getItem('role'),'getting role');
       
       
