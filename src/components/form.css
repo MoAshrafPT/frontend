@@ -28,7 +28,7 @@
 body{
     background-image: url("../images/car1.jpg");
     background-repeat: no-repeat;
-    background-size:150% ;
+    background-size:100% ;
     background-attachment: fixed;
 }
 
