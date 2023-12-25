@@ -16,6 +16,10 @@ import Requests from './components/Requests';
 import AllRequests from './components/AllRequests';
 import Sponsors from './components/Sponsors';
 import Races from './components/Races';
+import Projects from './components/Projects';
+import TasksAdmin from './components/TasksAdmin';
+import Incidents from './components/Incidents';
+import Alumni from './components/Alumni';
 
 
 
@@ -37,7 +41,11 @@ function App() {
          <Route path='/sponsors' element={<Sponsors />}></Route>
          <Route path='/myrequests' element={<Requests />}></Route>
          <Route path='/races' element={<Races />}></Route>
+         <Route path='/projects' element={<Projects />}></Route>
+         <Route path='/taskadmin' element={<TasksAdmin />}></Route>
+         <Route path='/incidents' element={<Incidents />}></Route>
          <Route path='/allrequests' element={<AllRequests />}></Route>
+         <Route path='/alumni' element={<Alumni />}></Route>
          <Route path='/members' element={<Members/>}></Route>
       </Routes>
     </BrowserRouter>
