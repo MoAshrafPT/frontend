@@ -4,8 +4,7 @@ import Toolbar from "./Toolbar";
 import { log, table } from "console";
 import Footer from "./Footer";
 import { DropdownMenu, Table } from "react-bootstrap";
-import DropdownTeam from "./DropdownTeam";
-
+import DropdownAdminTeam from "./DropdownAdminTeam";
 type memberData = {
   Mid: number;
   nameM: string;
@@ -15,11 +14,12 @@ type memberData = {
   Team_Name: string;
 };
 
-export default function Members() {
+export default function DisciplinaryAction() {
   const [data, setData] = useState<memberData[]>([]);
   const [teamName, setTeamName] = useState<string>("All");
+  const [selectedMember, setSelectedMember] = useState<number | null>(null);
   useEffect(() => {
-    fetch("http://localhost:8081/members/" + teamName + "")
+    fetch("http://localhost:8081/discipmember/" + teamName + "")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -27,7 +27,9 @@ export default function Members() {
       })
       .catch((err) => console.log(err));
   }, [teamName]);
-
+  const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>, memberId: number) => {
+    setSelectedMember(memberId);
+  };
   return (
     <div>
       <Toolbar />
@@ -39,7 +41,7 @@ export default function Members() {
           >
             <h2>{teamName} Members</h2>
           </div>
-          <DropdownTeam path={teamName} setPath={setTeamName} />
+          <DropdownAdminTeam path={teamName} setPath={setTeamName} />
         </div>
         <div className="d-flex justify-content-center rounded">
           <Table
@@ -53,10 +55,7 @@ export default function Members() {
               <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Admin ID</th>
-                <th>Position</th>
-                <th>Team Name</th>
-                <th>Major</th>
+                <th style={{width:"20px"}}>Select</th>
               </tr>
             </thead>
             <tbody>
@@ -65,10 +64,13 @@ export default function Members() {
                 <tr key={item.Mid}>
                   <td>{item.Mid}</td>
                   <td>{item.nameM}</td>
-                  <td>{item.Admin_Ssn}</td>
-                  <td>{item.Position}</td>
-                  <td>{item.Team_Name}</td>
-                  <td>{item.Major} </td>
+                  <td><input
+                    type="radio"
+                    value={item.Mid}
+                    checked={selectedMember === item.Mid}
+                    onChange={(e) => handleRadioChange(e, item.Mid)}
+                    style={{ height: "20px", margin: "0px", padding: "0px" }}
+              /></td>
                 </tr>
               ))}
             </tbody>
