@@ -19,7 +19,7 @@ function Signup()
   //allows for navigation through child component
   const navigate = useNavigate();
     
-  const phoneRegex = new RegExp('@"^(01)\d{9}$"'); //check for format 01XXXXXXXX
+  
   const currentYear = new Date().getFullYear(); //get year to check maximum allowed time for member to stay
 
     //States for sign up user data and sign up status
@@ -37,7 +37,7 @@ function Signup()
     const [gradYear,setGradYear] = useState(currentYear+5);
     //----------------------------------------------------------------//
 
-  
+    const phoneRegex = /^01[0125][0-9]{8}$/;
     
 
     //Data validation schema for form entry
@@ -53,7 +53,10 @@ function Signup()
     }).refine((data)=> data.password === data.confirmPassword, {
         message: "Passwords do not match",
         path: ["confirmPassword"],
-    });
+    }).refine((data) => phoneRegex.test(data.phoneNumber), {
+        message: 'Invalid Phone Number',
+        path: ['phoneNumber'],
+      });
 
     //handle submisson
     const {register, handleSubmit, formState:{errors}} = useForm<FormData>({resolver:zodResolver(schema)});
