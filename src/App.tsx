@@ -21,6 +21,7 @@ import TasksAdmin from "./components/TasksAdmin";
 import Incidents from "./components/Incidents";
 import Alumni from "./components/Alumni";
 import DisciplinaryAction from "./components/DisciplinaryAction";
+import Settings from "./components/Settings";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/allrequests" element={<AllRequests />}></Route>
           <Route path="/alumni" element={<Alumni />}></Route>
           <Route path="/members" element={<Members />}></Route>
+          <Route path="/settings" element={<Settings />}></Route>
           <Route path="/discipline" element={<DisciplinaryAction />}></Route>
         </Routes>
       </BrowserRouter>
