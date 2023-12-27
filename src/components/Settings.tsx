@@ -9,6 +9,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ZodType, z } from "zod";
 import axios from "axios";
+import BarChartComponent from "./BarChartTeam";
+import { Chart as ChartJS, registerables } from 'chart.js';
+import { Chart } from 'react-chartjs-2'
+import BarChartTeam from "./BarChartTeam";
+import BarChartPrice from "./BarChartPrice";
+import BarChartFunds from "./BarChartFunds";
+import BarChartProjects from "./BarChartProjects";
+ChartJS.register(...registerables);
+
 
 
 
@@ -96,6 +105,7 @@ const [projectCount,setProjectCount] = useState<number>(0);
 const [totalSeverity,setTotalSeverity] = useState<number>(0);
 const [totalMembers,setTotalMembers] = useState<number>(0);
 const [actionsIssued,setActionsIssued] = useState<number>(0);
+const [maxPrize,setMaxPrize] = useState<any>(null);
 const [citations,setCitations] = useState<citationData[]>([])
   useEffect(() => {
     //fetches related to all users
@@ -122,6 +132,15 @@ const [citations,setCitations] = useState<citationData[]>([])
         console.log(data);
       })
       .catch((err) => console.log(err));
+
+      fetch(`http://localhost:8081/getmaxawards`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMaxPrize(data[0]['Max(Prize)']);
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+
 
       //Admin level fetches
       if(localStorage.getItem('role') === 'admin'){
@@ -273,12 +292,18 @@ const [citations,setCitations] = useState<citationData[]>([])
          
         </div>
                 </section>
+               
 
-
-
-                
                 </div>
             }
+            <h2>Global Statistics</h2>
+                <section style={{background:"white"}}>
+                  <h2>Maximum Prize Money: {maxPrize} EGP</h2>
+                  <BarChartTeam/>
+                  <BarChartPrice/>
+                 <BarChartFunds/>
+                 <BarChartProjects/>
+                </section>
        </div>
       <Footer />
     </div>
