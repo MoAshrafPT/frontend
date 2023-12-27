@@ -25,9 +25,15 @@ import Settings from "./components/Settings";
 
 import Updates from "./components/updates";
 import LatestUpdate from "./components/latestupdates";
-=======
+
 import AssignTasks from "./components/AssignTasks";
 import AssignTeam from "./components/AssignTeam";
+import ChangePosition from "./components/ChangePosition";
+import Awards from "./components/Awards";
+import CarParts from "./components/CarParts";
+import FeedBackMember from "./components/FeedBackMember";
+import FeedBackAdmins from "./components/FeedBackAdmins";
+import FeedBack from "./components/FeedBack";
 
 
 function App() {
@@ -40,6 +46,9 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/feedback" element={<FeedBack />}></Route>
+          <Route path="/feedbackmember" element={<FeedBackMember />}></Route>
+          <Route path="/feedbackadmin" element={<FeedBackAdmins />}></Route>
           <Route path="/tasks" element={<Tasks />}></Route>
           <Route path="/tools" element={<Tools />}></Route>
           <Route path="/cars" element={<Cars />}></Route>
@@ -57,6 +66,9 @@ function App() {
           <Route path="/assignteam" element={<AssignTeam />}></Route>
           <Route path="/discipline" element={<DisciplinaryAction />}></Route>
           <Route path="/updates" element={<Updates />}></Route>
+          <Route path="/changeposition" element={<ChangePosition />}></Route>
+          <Route path="/awards" element={<Awards />}></Route>
+          <Route path="/carparts" element={<CarParts />}></Route>
           <Route path="/latestupdates" element={<LatestUpdate />}></Route>
         </Routes>
       </BrowserRouter>

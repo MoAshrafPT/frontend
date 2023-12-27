@@ -68,7 +68,7 @@ export default function Cars() {
         console.log(data);
       })
       .catch((err) => console.log(err));
-  });
+  },[]);
 
   return (
     <div className="general-appearance">
@@ -86,30 +86,13 @@ export default function Cars() {
                 src={item.Logo}
                 alt=""
               />
+              <h3>{item.Type}</h3>
+              <h3>{item.Model}</h3>
             </Carousel.Item>
           ))}
         </Carousel>
 
-        <Container>
-          <h2>Car Awards</h2>
-          <Row>
-            {awards.map((item) => (
-              <Col key={item.id} xs={12} md={4}>
-                <Card style={{ marginBottom: "20px" }}>
-                  <Card.Img
-                    variant="top"
-                    src={item.image}
-                    alt={`Image for ${item.title}`}
-                  />
-                  <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    <Card.Text>{item.description}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Container>
+       
       </div>
       <Footer />
     </div>

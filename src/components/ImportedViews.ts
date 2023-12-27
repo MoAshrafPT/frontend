@@ -54,6 +54,13 @@ const guestView = [
       "https://media.istockphoto.com/id/639698498/photo/graduation-college-school-degree-successful-concept.jpg?s=612x612&w=0&k=20&c=xTxCHBETVW5uX4HcZOhkgH4w_oNYnbSMfKe2jv-PNlU=",
     link: "/alumni",
   },
+  {
+    id:8,
+    title:'FeedBack',
+    description:'Send FeedBack to Teams',
+    image:'https://st.depositphotos.com/1826664/5097/i/450/depositphotos_50975555-stock-photo-feedback-with-colourful-comments-symbol.jpg',
+    link:'/feedback'
+  },
 ];
 
 const memberView = [
@@ -96,13 +103,12 @@ const memberView = [
       "https://egbc-images.s3-eu-west-1.amazonaws.com/content/w620/172237.jpg",
   },
   {
-    id: 6,
-    title: "Update to Admin",
-    description: "Give updates to your admin",
-    image:
-      "https://www.up.ac.za/crop/h520/w690/85/ZP_NewsImages/update-2.zp132166.jpg",
-    link: "/updates",
-  },
+         id:6,
+         title:'FeedBack',
+         description:'View submitted FeedBacks',
+         image:'https://st.depositphotos.com/1826664/5097/i/450/depositphotos_50975555-stock-photo-feedback-with-colourful-comments-symbol.jpg',
+         link:'/feedbackmember'
+      },
 ];
 const adminView = [
   {
@@ -152,13 +158,12 @@ const adminView = [
     link: "/taskadmin",
   },
   {
-    id: 7,
-    title: "Latest Updates",
-    description: "Get the latest updates from your members",
-    image:
-      "https://www.up.ac.za/crop/h520/w690/85/ZP_NewsImages/update-2.zp132166.jpg",
-    link: "/latestupdates",
-  },
+         id:7,
+         title:'FeedBack',
+         description:'View submitted FeedBacks',
+         image:'https://st.depositphotos.com/1826664/5097/i/450/depositphotos_50975555-stock-photo-feedback-with-colourful-comments-symbol.jpg',
+         link:'/feedbackadmin'
+      }
 ];
 const sponsorView = [
   {
@@ -255,6 +260,13 @@ const managerView = [
       "https://media.istockphoto.com/id/1330040188/photo/to-do-list-in-spiral-notepad-isolated-on-desk.jpg?s=612x612&w=0&k=20&c=ksolS1xqL9gnTOaXS4OFGvF3S_kfV3CW0tMhaQ8wkUg=",
     link: "/taskadmin",
   },
+  {
+         id:7,
+         title:'FeedBack',
+         description:'View submitted FeedBacks',
+         image:'https://st.depositphotos.com/1826664/5097/i/450/depositphotos_50975555-stock-photo-feedback-with-colourful-comments-symbol.jpg',
+         link:'/feedbackadmin'
+      },
 ];
 
-export { adminView, sponsorView, guestView, memberView, managerView };
+export { adminView, sponsorView, guestView, memberView, managerView };
