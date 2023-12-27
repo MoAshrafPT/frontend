@@ -37,7 +37,7 @@ type taskData = {
 export default function AssignTasks() {
   const navigate = useNavigate();
 
-  if(localStorage.getItem("role") !== 'admin'){
+  if(localStorage.getItem('role') === 'member' || localStorage.getItem('role') === null ){
     navigate('/home');
   }
  const [selectedMember, setSelectedMember] = useState<number | null>(null);
@@ -78,6 +78,7 @@ const submitData = (data: taskData)=>{
 
 
   useEffect(() => {
+    if(localStorage.getItem("role") === 'admin')
     fetch("http://localhost:8081/adminmembers/"+localStorage.getItem('userId'))
       .then((res) => res.json())
       .then((data) => {
@@ -85,6 +86,18 @@ const submitData = (data: taskData)=>{
         console.log(data);
       })
       .catch((err) => console.log(err));
+
+
+      if(localStorage.getItem("role") === 'manager')
+      fetch("http://localhost:8081/allmembers/")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+
+
   }, []);
   const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>, memberId: number) => {
     setSelectedMember(memberId);

@@ -14,6 +14,16 @@ import axios from "axios";
 
 
 export default function Settings() {
+
+type citationData = {
+  Admin_id: number,
+  Member_id:number,
+  Reason: string,
+  Action:string,
+  severity: number,
+  reportDate:string
+
+} 
 type changedPassword = {
     password:string,
     confirmPassword:string
@@ -86,6 +96,7 @@ const [projectCount,setProjectCount] = useState<number>(0);
 const [totalSeverity,setTotalSeverity] = useState<number>(0);
 const [totalMembers,setTotalMembers] = useState<number>(0);
 const [actionsIssued,setActionsIssued] = useState<number>(0);
+const [citations,setCitations] = useState<citationData[]>([])
   useEffect(() => {
     //fetches related to all users
     fetch(`http://localhost:8081/projectcount/${localStorage.getItem('userId')}`)
@@ -130,6 +141,14 @@ const [actionsIssued,setActionsIssued] = useState<number>(0);
       })
       .catch((err) => console.log(err)); 
       }
+      fetch(`http://localhost:8081/citations/${localStorage.getItem("userId")}`)
+      .then((res) => res.json())
+      .then((data) => {
+      setCitations(data);
+      console.log(data);
+    })
+    .catch((err) => console.log(err)); 
+      
       
   }, []);
 
@@ -181,6 +200,8 @@ const [actionsIssued,setActionsIssued] = useState<number>(0);
                     <input type="submit" value= "update" className="btn  border bg-success text-decoration-none" style={{width:'70px', margin: '3px',color:"white"}} />
                 </form>
             </section>
+            {(localStorage.getItem("role") !== 'sponsor') &&
+            <div>
             <h2>User statistics</h2>
             <section style={{backgroundColor: 'white',padding:'10px'}}>
                 <p>
@@ -193,7 +214,7 @@ const [actionsIssued,setActionsIssued] = useState<number>(0);
                     Total Severities: {!totalSeverity && 0} {totalSeverity}
                 </p>
                 
-            </section>
+            </section></div> }
             {(localStorage.getItem('role')=== 'admin' || localStorage.getItem('role')=== 'manager') &&
                 <div>
                 <h2>Administrative Statistics</h2>
@@ -206,6 +227,56 @@ const [actionsIssued,setActionsIssued] = useState<number>(0);
                     </p>
                     
                 </section>
+
+
+
+                
+                </div>
+            }
+
+            {(localStorage.getItem('role')=== 'member') &&
+                <div>
+                <h2>Your Citations</h2>
+                <section style={{backgroundColor: 'white',padding:'10px'}}>
+                  
+                <div className="d-flex justify-content-center rounded">
+          <Table
+            striped="columns"
+            bordered
+            hover
+            responsive
+            className="w-100 rounded"
+          >
+            <thead className="rounded">
+              <tr>
+                <th>Admin ID</th>
+                <th>Reason</th>
+                <th>Action</th>
+                <th>Severity</th>
+                <th>Date of Report</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              {/* Use map function to iterate over the data array */}
+              {citations.map((item,i) => (
+                <tr key={i}>
+                  <td>{item.Admin_id}</td>
+                  <td>{item.Reason}</td>
+                  <td>{item.Action}</td>
+                  <td>{item.severity}</td>
+                  <td>{item.reportDate.slice(0, -14)}</td> 
+                </tr>
+              ))}
+            </tbody>
+          </Table> 
+         
+        </div>
+                </section>
+
+
+
+                
                 </div>
             }
        </div>
