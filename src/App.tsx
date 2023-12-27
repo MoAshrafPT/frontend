@@ -34,6 +34,7 @@ import CarParts from "./components/CarParts";
 import FeedBackMember from "./components/FeedBackMember";
 import FeedBackAdmins from "./components/FeedBackAdmins";
 import FeedBack from "./components/FeedBack";
+import Events from "./components/Events";
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
           <Route path="/changeposition" element={<ChangePosition />}></Route>
           <Route path="/awards" element={<Awards />}></Route>
           <Route path="/carparts" element={<CarParts />}></Route>
+          <Route path="/event" element={<Events />}></Route>
           <Route path="/latestupdates" element={<LatestUpdate />}></Route>
         </Routes>
       </BrowserRouter>

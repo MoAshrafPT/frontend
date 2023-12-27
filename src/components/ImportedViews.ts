@@ -181,10 +181,24 @@ const adminView = [
           "https://www.up.ac.za/crop/h520/w690/85/ZP_NewsImages/update-2.zp132166.jpg",
         link: "/latestupdates",
       },
+      {
+        id: 9,
+        title: 'Recent Events',
+        description: 'Check if there is events or not',
+        image: 'https://cdn.uniacco.com/blog/wp-content/uploads/2021/06/02122118/samuel-pereira-uf2nnANWa8Q-unsplash-min-scaled.jpg',
+        link: '/event'
+      },
 ];
 const sponsorView = [
   {
     id: 1,
+    title: 'Event',
+    description: 'Add Event',
+    image: 'https://cdn.uniacco.com/blog/wp-content/uploads/2021/06/02122118/samuel-pereira-uf2nnANWa8Q-unsplash-min-scaled.jpg',
+    link: '/event' 
+    },
+  {
+    id: 2,
     title: "Races",
     description: "Get news about our journey on the track",
     image:
@@ -192,21 +206,21 @@ const sponsorView = [
     link: "/races",
   },
   {
-    id: 2,
+    id: 3,
     title: "Cars",
     description: "View our latest creations",
     image: "https://cdn-9.motorsport.com/images/mgl/YMdyjMg2/s800/mercedes-w14-1.jpg",
     link: "/cars",
   },
   {
-    id: 3,
+    id: 4,
     title: "tools",
     description: "Check out our inventory and see available tools",
     image: "https://aschilo.com/wp-content/uploads/tool-equip.jpg",
     link: "/tools",
   },
   {
-    id: 4,
+    id: 5,
     title: "Sponsors",
     description: "View our beloved sponsors",
     image:
@@ -214,7 +228,7 @@ const sponsorView = [
     link: "/sponsors",
   },
   {
-    id: 5,
+    id: 6,
     title: "Awards",
     description: "Check our latest achievments",
     image:
@@ -222,7 +236,7 @@ const sponsorView = [
     link: "/awards",
   },
   {
-    id: 6,
+    id: 7,
     title: "Alumni",
     description: "Our honorable past members",
     image:
@@ -282,4 +296,4 @@ const managerView = [
 
 ];
 
-export { adminView, sponsorView, guestView, memberView, managerView };
+export { adminView, sponsorView, guestView, memberView,managerView};
