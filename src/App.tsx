@@ -22,8 +22,13 @@ import Incidents from "./components/Incidents";
 import Alumni from "./components/Alumni";
 import DisciplinaryAction from "./components/DisciplinaryAction";
 import Settings from "./components/Settings";
+
+import Updates from "./components/updates";
+import LatestUpdate from "./components/latestupdates";
+=======
 import AssignTasks from "./components/AssignTasks";
 import AssignTeam from "./components/AssignTeam";
+
 
 function App() {
   return (
@@ -51,6 +56,8 @@ function App() {
           <Route path="/assigntask" element={<AssignTasks />}></Route>
           <Route path="/assignteam" element={<AssignTeam />}></Route>
           <Route path="/discipline" element={<DisciplinaryAction />}></Route>
+          <Route path="/updates" element={<Updates />}></Route>
+          <Route path="/latestupdates" element={<LatestUpdate />}></Route>
         </Routes>
       </BrowserRouter>
     </UserContextProvider>
