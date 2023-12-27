@@ -35,7 +35,7 @@ const guestView = [
     id: 5,
     title: "Cars",
     description: "View our latest creations",
-    image: "https://cu-eco.org/img/img_9197_1-removebg-preview.png",
+    image: "https://cdn-9.motorsport.com/images/mgl/YMdyjMg2/s800/mercedes-w14-1.jpg",
     link: "/cars",
   },
   {
@@ -101,6 +101,7 @@ const memberView = [
     description: "View available car parts",
     image:
       "https://egbc-images.s3-eu-west-1.amazonaws.com/content/w620/172237.jpg",
+      link: "/carparts"
   },
   {
          id:6,
@@ -178,7 +179,7 @@ const sponsorView = [
     id: 2,
     title: "Cars",
     description: "View our latest creations",
-    image: "https://cu-eco.org/img/photogrid.jpg",
+    image: "https://cdn-9.motorsport.com/images/mgl/YMdyjMg2/s800/mercedes-w14-1.jpg",
     link: "/cars",
   },
   {

@@ -41,6 +41,17 @@ export default function TasksAdmin() {
       .catch((err) => console.log(err));
   }, []);
 
+  const handleDelete =  (item: taskDataforAdmins)=>{
+    axios.delete(`http://localhost:8081/deletetask/${item.Task_Number}`)
+    .then((res) => {
+        console.log(res)
+        setTasksadmin((prevTasks) => prevTasks.filter(task=> task.Task_Number!==item.Task_Number));
+    }
+    )
+    .catch(err => console.log(err)
+    )
+}
+
   return (
     <div>
       <Toolbar />
@@ -77,6 +88,7 @@ export default function TasksAdmin() {
                 <th>Member Name</th>
                 <th>Position</th>
                 <th>Major</th>
+                <th>Mark as done</th>
               </tr>
             </thead>
             <tbody>
@@ -92,6 +104,9 @@ export default function TasksAdmin() {
                   <td>{item.nameM}</td>
                   <td>{item.Position}</td>
                   <td>{item.Major}</td>
+                  <td ><input onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{
+                handleDelete(item);
+              }} style={{height: "20px", margin: "0px", padding:"0px"}} type="checkbox" /></td>
                 </tr>
               ))}
             </tbody>

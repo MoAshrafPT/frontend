@@ -58,7 +58,7 @@ export default function Races(){
         console.log(data);
       })
       .catch((err) => console.log(err));
-    })
+    },[])
 
     return(
         <div>
