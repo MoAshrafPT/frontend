@@ -95,9 +95,15 @@ export default function TasksAdmin() {
                 </tr>
               ))}
             </tbody>
-          </Table>
+          </Table> 
+         
         </div>
+        <div className="formcontainer d-flex justify-content-center" style={{width:"100%"}}>
+          <Link style={{marginRight:"30px"}}to='/assigntask' className="btn btn-success btn-highlight  w-10">Assign Tasks</Link>
+          <Link to='/assignteam' className="btn btn-success btn-highlight  w-10">Recruit new members</Link>
+          </div>
       </div>
+      
       <Footer />
     </div>
   );
