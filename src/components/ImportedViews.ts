@@ -95,6 +95,14 @@ const memberView = [
     image:
       "https://egbc-images.s3-eu-west-1.amazonaws.com/content/w620/172237.jpg",
   },
+  {
+    id: 6,
+    title: "Update to Admin",
+    description: "Give updates to your admin",
+    image:
+      "https://www.up.ac.za/crop/h520/w690/85/ZP_NewsImages/update-2.zp132166.jpg",
+    link: "/updates",
+  },
 ];
 const adminView = [
   {
@@ -142,6 +150,14 @@ const adminView = [
     image:
       "https://media.istockphoto.com/id/1330040188/photo/to-do-list-in-spiral-notepad-isolated-on-desk.jpg?s=612x612&w=0&k=20&c=ksolS1xqL9gnTOaXS4OFGvF3S_kfV3CW0tMhaQ8wkUg=",
     link: "/taskadmin",
+  },
+  {
+    id: 7,
+    title: "Latest Updates",
+    description: "Get the latest updates from your members",
+    image:
+      "https://www.up.ac.za/crop/h520/w690/85/ZP_NewsImages/update-2.zp132166.jpg",
+    link: "/latestupdates",
   },
 ];
 const sponsorView = [

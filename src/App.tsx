@@ -22,7 +22,8 @@ import Incidents from "./components/Incidents";
 import Alumni from "./components/Alumni";
 import DisciplinaryAction from "./components/DisciplinaryAction";
 import Settings from "./components/Settings";
-
+import Updates from "./components/updates";
+import LatestUpdate from "./components/latestupdates";
 function App() {
   return (
     <UserContextProvider>
@@ -47,6 +48,8 @@ function App() {
           <Route path="/members" element={<Members />}></Route>
           <Route path="/settings" element={<Settings />}></Route>
           <Route path="/discipline" element={<DisciplinaryAction />}></Route>
+          <Route path="/updates" element={<Updates />}></Route>
+          <Route path="/latestupdates" element={<LatestUpdate />}></Route>
         </Routes>
       </BrowserRouter>
     </UserContextProvider>
