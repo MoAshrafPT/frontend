@@ -22,6 +22,8 @@ import Incidents from "./components/Incidents";
 import Alumni from "./components/Alumni";
 import DisciplinaryAction from "./components/DisciplinaryAction";
 import Settings from "./components/Settings";
+import AssignTasks from "./components/AssignTasks";
+import AssignTeam from "./components/AssignTeam";
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
           <Route path="/alumni" element={<Alumni />}></Route>
           <Route path="/members" element={<Members />}></Route>
           <Route path="/settings" element={<Settings />}></Route>
+          <Route path="/assigntask" element={<AssignTasks />}></Route>
+          <Route path="/assignteam" element={<AssignTeam />}></Route>
           <Route path="/discipline" element={<DisciplinaryAction />}></Route>
         </Routes>
       </BrowserRouter>

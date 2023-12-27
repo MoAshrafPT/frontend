@@ -23,3 +23,21 @@ padding-bottom: 25rem;
    left: 0;
    bottom:0;
 }
+textarea{
+    width: 350px;
+    border-radius: 20px;
+    height:80px;
+    color:aliceblue;
+    background: transparent;
+    outline: none;
+    border:2px solid rgba(131, 119, 119, 0.452);
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
