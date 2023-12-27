@@ -8,9 +8,6 @@ import DropdownAdminTeam from "./DropdownAdminTeam";
 type memberData = {
   Mid: number;
   nameM: string;
-  Admin_Ssn: number;
-  Position: string;
-  Major: string;
   Team_Name: string;
 };
 
@@ -27,7 +24,10 @@ export default function DisciplinaryAction() {
       })
       .catch((err) => console.log(err));
   }, [teamName]);
-  const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>, memberId: number) => {
+  const handleRadioChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    memberId: number
+  ) => {
     setSelectedMember(memberId);
   };
   return (
@@ -55,7 +55,7 @@ export default function DisciplinaryAction() {
               <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th style={{width:"20px"}}>Select</th>
+                <th style={{ width: "20px" }}>Select</th>
               </tr>
             </thead>
             <tbody>
@@ -64,13 +64,15 @@ export default function DisciplinaryAction() {
                 <tr key={item.Mid}>
                   <td>{item.Mid}</td>
                   <td>{item.nameM}</td>
-                  <td><input
-                    type="radio"
-                    value={item.Mid}
-                    checked={selectedMember === item.Mid}
-                    onChange={(e) => handleRadioChange(e, item.Mid)}
-                    style={{ height: "20px", margin: "0px", padding: "0px" }}
-              /></td>
+                  <td>
+                    <input
+                      type="radio"
+                      value={item.Mid}
+                      checked={selectedMember === item.Mid}
+                      onChange={(e) => handleRadioChange(e, item.Mid)}
+                      style={{ height: "20px", margin: "0px", padding: "0px" }}
+                    />
+                  </td>
                 </tr>
               ))}
             </tbody>
