@@ -24,6 +24,11 @@ ChartJS.register(...registerables);
 
 export default function Settings() {
 
+type Projects = {
+  Pid : number,
+  PName: string
+}  
+
 type citationData = {
   Admin_id: number,
   Member_id:number,
@@ -107,6 +112,7 @@ const [totalMembers,setTotalMembers] = useState<number>(0);
 const [actionsIssued,setActionsIssued] = useState<number>(0);
 const [maxPrize,setMaxPrize] = useState<any>(null);
 const [citations,setCitations] = useState<citationData[]>([])
+const [projects,setProjects] = useState<Projects[]>([]);
   useEffect(() => {
     //fetches related to all users
     fetch(`http://localhost:8081/projectcount/${localStorage.getItem('userId')}`)
@@ -166,7 +172,14 @@ const [citations,setCitations] = useState<citationData[]>([])
       setCitations(data);
       console.log(data);
     })
-    .catch((err) => console.log(err)); 
+    .catch((err) => console.log(err));
+    
+    fetch("http://localhost:8081/totalprojects")
+    .then((res)=>res.json())
+    .then((data) => {
+      setProjects(data);
+      console.log(data);
+    })
       
       
   }, []);
@@ -234,6 +247,33 @@ const [citations,setCitations] = useState<citationData[]>([])
                 </p>
                 
             </section></div> }
+            <h2>All Projects</h2>
+            <section style={{backgroundColor: 'white',padding:'10px'}}>
+            <Table
+            striped="columns"
+            bordered
+            hover
+            responsive
+            className="w-100 rounded"
+          >
+            <thead className="rounded">
+              <tr>
+                <th>Project ID</th>
+                <th>Project Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* Use map function to iterate over the data array */}
+              {projects.map((item,i) => (
+                <tr key={i}>
+                  <td>{item.Pid}</td>
+                  <td>{item.PName}</td>
+            
+                </tr>
+              ))}
+            </tbody>
+          </Table>    
+            </section>
             {(localStorage.getItem('role')=== 'admin' || localStorage.getItem('role')=== 'manager') &&
                 <div>
                 <h2>Administrative Statistics</h2>

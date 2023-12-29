@@ -53,9 +53,9 @@ export default function Events() {
              </div>
              {(localStorage.getItem("role")=== 'sponsor') &&
              <div className=" d-flex justify-content-center ">
-             <img src={arrow2}/>
-             <div className="text-white h4 d-flex justify-content-center "> <p> If you want to announce the team's admin about new update, Please, send us a message with details</p></div>
              <img src={arrow}/>
+             <div className="text-white h4 d-flex justify-content-center "> <p> If you want to announce the team's admin about new update, Please, send us a message with details</p></div>
+             <img src={arrow2}/>
              </div>}
              
         {(localStorage.getItem("role")=== 'sponsor') &&
@@ -63,6 +63,7 @@ export default function Events() {
           <textarea
             rows={7}
             cols={174}
+            style={{width:"100%",height:"200px"}}
             onChange={handleChange}
             name="paragraph"
             value={data.paragraph}
